@@ -1,6 +1,6 @@
 # Big2-OCEAN-Experiment
 
-This proyect corresponds to the article's experiment
+This repository corresponds to the article's experiment
 "The Big-2/ROSe Model of Online Personality -- Towards a Lightweight Set of Markers for Characterizing the Behavior of Social Platform Denizens" (under review)
 	
 Here is the paper abstract:
