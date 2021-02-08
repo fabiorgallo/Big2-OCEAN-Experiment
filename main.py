@@ -397,27 +397,6 @@ def processNewItemGivenUserBreadthIntervalAndK(userID, oneInterval, kValue, OCEA
     return answer, FeaturesWithOCEANlist, TargetsList
 
 
-# recibe un arreglo donde las posiciones
-# [0]: indica el intervalo o en blanco para no repetirlo,
-# [1]: la decición del usuario, cuando es reutilizado [1] tiene algo así:   (1711790197,NAMORON,neg)[2013-10-21 12:15:09];(1711790197,NAMORON,neg)[2013-10-21 12:15:15] y en [2] es distinto de '<vacio>'
-# [2]: la lista de news items que recibió. Puede ser algo así:  (37179759,NAMORON,pos)[2013-10-21 05:34:29];(290587368,NAMORON,neu)[2013-10-21 06:20:02], o '<vacio>'
-def procesarNewsItemsEnClasificador(arrayEntradaNI):  # TODO ¿sirve?
-    # se evalua si es <ignorado>. La estructura cuando es ignorado es algo así:     <ignorado>[TEHELKA]   por eso se corta el string
-    if len(arrayEntradaNI[1]) > 0 and (arrayEntradaNI[1])[:10] != '<ignorado>' and (arrayEntradaNI[1])[:7] != '<vacio>':
-        # El usuario usó un hashtag que le venía en su feed o generó uno nuevo
-        # print(":::::::::::::::::::::::::::::::::::::::::::::::::::::", arrayEntradaNI[1], "::::", len(arrayEntradaNI[1]))
-
-        if arrayEntradaNI[2][:11] == '<inventado>':
-            print("   - - - INVENTADO ", arrayEntradaNI[1], " --- ", arrayEntradaNI[2])
-        else:
-            print("   - - - REUTILIZADO ", arrayEntradaNI[1], " --- ", arrayEntradaNI[2])
-
-        # se separan los news items generados por este usuario
-        arrayDecisiones = arrayEntradaNI[1].split(';')
-        for unaDecision in arrayDecisiones:
-            print("           |", unaDecision)
-
-
 def getNormalizedStatusHashtagAndTarget(newsItemInputarrayWholeInterval):
     """
     #  Given a list of sublist containing the full status of one interval, each sublist is like:
